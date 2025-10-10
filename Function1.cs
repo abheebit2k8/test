@@ -19,8 +19,8 @@ namespace PatSnapProxy
         private static DateTime _tokenExpiry = DateTime.MinValue;
 
         // Replace with your real credentials
-        private const string ClientId = "6c8FlVZZrPGcl5EPPTIxKKF5UA3m9yRGmrAp1rORMr4zdyDc";
-        private const string ClientSecret = "ry9tddgofz7g1366oou0h2vwvcmyzo611qz4hk36xqpdam537dz6ml7gcny911b7";
+        private const string ClientId = "jvito1qhroouvho0clo9e6d2dc2u0ldxbznvcbioevxmxguj";
+        private const string ClientSecret = "j2dkjyb504jnj54z0sg7sefzohd0ah55qu4p68x5gtoruma28l693zl1j0nolmym";
 
         [Function("PatSnapProxy")]
         public async Task<HttpResponseData> Run(
@@ -310,6 +310,7 @@ namespace PatSnapProxy
             var finalResponse = req.CreateResponse(proxyResp.StatusCode);
             finalResponse.Headers.Add("Content-Type", "application/json");
             await finalResponse.WriteStringAsync(proxyJson);
+
             return finalResponse;
         }
     }
