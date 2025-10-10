@@ -24,7 +24,7 @@ namespace PatSnapProxy
 
         [Function("PatSnapProxy")]
         public async Task<HttpResponseData> Run(
-            [HttpTrigger(AuthorizationLevel.Anonymous,
+            [HttpTrigger(AuthorizationLevel.Function,
                          "get","post","put","delete",
                          Route = "PatSnapProxy/{*path}")]
             HttpRequestData req, string path)
@@ -315,3 +315,4 @@ namespace PatSnapProxy
         }
     }
 }
+
